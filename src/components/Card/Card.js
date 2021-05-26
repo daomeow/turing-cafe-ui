@@ -5,10 +5,10 @@ const Card = ({ name, date, time, number, id, deleteOrder }) => {
   return (
     <div className='card'>
       <h3>{name}</h3>
-      <p>{date}</p>
-      <p>{time}</p>
-      <p>Number of guests: {number}</p>
-      <button onClick={() => deleteOrder(id)}>Cancel</button>
+      <p className='orderDate'>{date}</p>
+      <p className='orderTime'>{time}</p>
+      <p className='orderNumber'>Number of guests: {number}</p>
+      <button className='submit' onClick={() => deleteOrder(id)}>Cancel</button>
     </div>
   )
 }
