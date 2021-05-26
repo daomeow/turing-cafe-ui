@@ -12,6 +12,10 @@ describe('Home', () => {
       .get('button')
   });
 
+  it ('should reflect the value entered into an input field', () => {
+    cy.get('form input[name="name"').type('Craig').should('have.value', 'Craig')
+  })
+
   it('should check that the form data is displayed after entered', () => {
     cy.get('form input[name="name"').type('Craig')
       .get('form input[name="date"').type('05/26')
@@ -25,8 +29,3 @@ describe('Home', () => {
     .get('.orderNumber').should('contain', 2)
   })
 })
-
-
-// Write a test that checks that when data is put into the form, the value is reflected in that form input.
-
-// Write a test to check the user flow of adding a new reservation to the page.

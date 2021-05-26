@@ -25,8 +25,6 @@ class App extends Component {
   }
 
   deleteOrder = (id) => {
-    console.log(id)
-    console.log(this.state.orders)
     const filteredOrders = this.state.orders.filter(order => order.id !== id);
 
     this.setState({ orders: filteredOrders });

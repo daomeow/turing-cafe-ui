@@ -25,5 +25,3 @@ const List = ({orders, deleteOrder}) => {
 }
 
 export default List;
-
-//id, name, 
