@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import List from '../List/List';
 import Form from '../Form/Form';
+import { getAllOrders } from '../../utilities'
 
 class App extends Component {
   constructor() {
@@ -11,8 +12,23 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    getAllOrders()
+      .then(data => {
+        console.log(data)
+        this.setState({ orders: data})
+      })
+  }
+
   addOrder = (newOrder) => {
     this.setState({ orders: [...this.state.orders, newOrder] });
+  }
+
+  deleteOrder = (id) => {
+    console.log(id)
+    const filteredOrders = this.state.ideas.filter(idea => idea.id !== id);
+
+    this.setState({ orders: filteredOrders });
   }
 
   render() {
@@ -23,7 +39,7 @@ class App extends Component {
           <Form addOrder={this.addOrder} />
         </div>
         <div className='resy-container'>
-          <List orders={this.state.orders}/>
+          <List orders={this.state.orders} deleteOrder={this.deleteOrder}/>
         </div>
       </div>
     )

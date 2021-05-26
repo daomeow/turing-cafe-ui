@@ -9,13 +9,21 @@ class Form extends Component {
        description: ''
     }
   }
-  submitIdea = event => {
+  submitOrder = event => {
     event.preventDefault();
     const newOrder = {
       id: Date.now(),
       ...this.state
     }
     this.props.addOrder(newOrder);
+  }
+
+  clearInputs = () => {
+    this.setState({ title: '', details: '' })
+  }
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   render() {
@@ -35,7 +43,7 @@ class Form extends Component {
           value={this.state.description} 
           onChange={event => this.handleChange(event)}
         />
-        <button onClick={event => this.submitIdea(event)}>Submit</button>
+        <button onClick={event => this.submitOrder(event)}>Submit</button>
       </form>
     )
   }

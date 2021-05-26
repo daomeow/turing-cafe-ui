@@ -2,7 +2,7 @@ import React from 'react';
 import './List.css';
 import Card from '../Card/Card'
 
-const List = ({orders}) => {
+const List = ({orders, deleteOrder}) => {
   const orderCards = orders.map(order => {
     return (
       <Card
@@ -10,6 +10,7 @@ const List = ({orders}) => {
       description={order.description}
       id={order.id}
       key={order.id}
+      deleteOrder={deleteOrder}
     />
     )
   })
