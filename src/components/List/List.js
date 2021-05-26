@@ -18,7 +18,7 @@ const List = ({orders, deleteOrder}) => {
   })
 
   return (
-    <div className='List-container'>
+    <div className='list-container'>
       {orderCards}
     </div>
   )

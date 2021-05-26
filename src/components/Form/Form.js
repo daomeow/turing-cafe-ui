@@ -21,7 +21,7 @@ class Form extends Component {
   }
 
   clearInputs = () => {
-    this.setState({ title: '', details: '' })
+    this.setState({ name: '', date: '', time: '', number: '' })
   }
 
   handleChange = event => {
@@ -53,13 +53,13 @@ class Form extends Component {
           onChange={event => this.handleChange(event)}
         />
         <input
-          type='text'
+          type='number'
           placeholder='Number'
           name='number'
           value={this.state.number}
           onChange={event => this.handleChange(event)}
         />
-        <button onClick={event => this.submitOrder(event)}>Submit</button>
+        <button onClick={event => this.submitOrder(event)}>Make Reservation</button>
       </form>
     )
   }
