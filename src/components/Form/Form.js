@@ -5,8 +5,10 @@ class Form extends Component {
   constructor() {
     super();
     this.state = {
-       title: '',
-       description: ''
+       name: '',
+       date: '',
+       time: '',
+       number:''
     }
   }
   submitOrder = event => {
@@ -31,16 +33,30 @@ class Form extends Component {
       <form>
         <input
           type='text'
-          placeholder='Title'
-          name='title'
-          value={this.state.title}
+          placeholder='Name'
+          name='name'
+          value={this.state.name}
           onChange={event => this.handleChange(event)}
         />
         <input
           type='text'
-          placeholder='Description'
-          name='description'
-          value={this.state.description} 
+          placeholder='Date'
+          name='date'
+          value={this.state.date}
+          onChange={event => this.handleChange(event)}
+        />
+        <input
+          type='text'
+          placeholder='Time'
+          name='time'
+          value={this.state.time}
+          onChange={event => this.handleChange(event)}
+        />
+        <input
+          type='text'
+          placeholder='Number'
+          name='number'
+          value={this.state.number}
           onChange={event => this.handleChange(event)}
         />
         <button onClick={event => this.submitOrder(event)}>Submit</button>

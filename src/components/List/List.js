@@ -6,8 +6,10 @@ const List = ({orders, deleteOrder}) => {
   const orderCards = orders.map(order => {
     return (
       <Card
-      title={order.title}
-      description={order.description}
+      name={order.name}
+      date={order.date}
+      time={order.time}
+      number={order.number}
       id={order.id}
       key={order.id}
       deleteOrder={deleteOrder}
@@ -23,3 +25,5 @@ const List = ({orders, deleteOrder}) => {
 }
 
 export default List;
+
+//id, name, 
